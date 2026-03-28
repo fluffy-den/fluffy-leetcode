@@ -84,27 +84,31 @@ fn list_eq(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> bool {
     true
 }
 
-#[test]
-fn test_case_1() {
-    let l1 = list_make(&[2, 4, 3]);
-    let l2 = list_make(&[5, 6, 4]);
-    assert_eq!(Solution::add_two_numbers(l1, l2), list_make(&[7, 0, 8]));
-}
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-#[test]
-fn test_case_2() {
-    let l1 = list_make(&[0]);
-    let l2 = list_make(&[0]);
-    assert_eq!(Solution::add_two_numbers(l1, l2), list_make(&[0]));
-}
+    #[test]
+    fn test_case_1() {
+        let l1 = list_make(&[2, 4, 3]);
+        let l2 = list_make(&[5, 6, 4]);
+        assert_eq!(Solution::add_two_numbers(l1, l2), list_make(&[7, 0, 8]));
+    }
 
-#[test]
-fn test_case_3() {
-    let l1 = list_make(&[9, 9, 9, 9, 9, 9, 9]);
-    let l2 = list_make(&[9, 9, 9, 9]);
-    assert_eq!(
-        Solution::add_two_numbers(l1, l2),
-        list_make(&[8, 9, 9, 9, 0, 0, 0, 1])
-    );
-}
+    #[test]
+    fn test_case_2() {
+        let l1 = list_make(&[0]);
+        let l2 = list_make(&[0]);
+        assert_eq!(Solution::add_two_numbers(l1, l2), list_make(&[0]));
+    }
 
+    #[test]
+    fn test_case_3() {
+        let l1 = list_make(&[9, 9, 9, 9, 9, 9, 9]);
+        let l2 = list_make(&[9, 9, 9, 9]);
+        assert_eq!(
+            Solution::add_two_numbers(l1, l2),
+            list_make(&[8, 9, 9, 9, 0, 0, 0, 1])
+        );
+    }
+}
